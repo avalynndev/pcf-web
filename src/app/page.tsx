@@ -69,7 +69,7 @@ export default async function HomePage() {
       <div className="mt-12 py-12">
         <div className="container mx-auto max-w-screen-lg px-6 md:flex md:items-center">
           <div className="md:w-1/3">
-            <Image
+            <img
               src="/founder.png"
               alt="Andra Daniela Campos"
               className="w-full rounded-lg shadow-lg"

@@ -13,7 +13,15 @@ import { HeartIcon, PaperPlaneIcon } from "@radix-ui/react-icons";
 import { Button } from "~/components/ui/button";
 import { Input } from "./ui/input";
 
-function PostComponent({ post }) {
+interface PostItem {
+  id: string;
+  title: string;
+  content: string;
+  createdAt: string;
+}
+
+
+function PostComponent({ post }: { post: PostItem }) {
   const copyLinkToClipboard = async () => {
     const url = window.location.origin;
     const link = `${url}`;
@@ -71,7 +79,7 @@ function PostComponent({ post }) {
 }
 
 export default function Post() {
-  const [posts] = api.post.getPosts.useSuspenseQuery();
+  const [posts] = api.post.getPosts.useSuspenseQuery<PostItem[]>();
   const [searchTerm, setSearchTerm] = useState("");
 
   if (!posts) return <div>None Found</div>;
@@ -82,7 +90,6 @@ export default function Post() {
 
   return (
     <div className="mx-auto w-full max-w-6xl p-8">
-      {/* Centered Input with Padding */}
       <div className="mb-8 flex items-center justify-center">
         <Input
           type="search"
