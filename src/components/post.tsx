@@ -14,11 +14,11 @@ import { Button } from "~/components/ui/button";
 import { Input } from "./ui/input";
 
 interface PostItem {
-  id: string;
+  id: number;
   title: string;
   content: string;
-  createdAt: string;
-  updatedAt: string;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 function PostComponent({ post }: { post: PostItem }) {
