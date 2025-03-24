@@ -18,8 +18,8 @@ interface PostItem {
   title: string;
   content: string;
   createdAt: string;
+  updatedAt: string;
 }
-
 
 function PostComponent({ post }: { post: PostItem }) {
   const copyLinkToClipboard = async () => {
