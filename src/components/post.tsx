@@ -18,7 +18,8 @@ interface PostItem {
   title: string;
   content: string;
   createdAt: Date;
-  updatedAt: Date;
+  contact: string;
+  foi: string[];
 }
 
 function PostComponent({ post }: { post: PostItem }) {
